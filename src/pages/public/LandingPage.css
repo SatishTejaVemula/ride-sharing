@@ -1,0 +1,1771 @@
+/* =========================================================
+   RIDEX PREMIUM LANDING PAGE
+========================================================= */
+
+.ridex-landing {
+  --rx-black: #070807;
+  --rx-dark: #0d0f0e;
+  --rx-panel: #121513;
+  --rx-panel-2: #181c19;
+
+  --rx-white: #f4f4ef;
+  --rx-soft: #d5d8d2;
+  --rx-muted: #8a9089;
+
+  --rx-green: #b9ff66;
+  --rx-green-dark: #8bc947;
+
+  background: var(--rx-black);
+  color: var(--rx-white);
+
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  font-family:
+    Inter,
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+}
+
+.ridex-landing *,
+.ridex-landing *::before,
+.ridex-landing *::after {
+  box-sizing: border-box;
+}
+
+.ridex-landing button,
+.ridex-landing a {
+  font: inherit;
+}
+
+.ridex-landing button {
+  cursor: pointer;
+}
+
+.ridex-landing a {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.ridex-navbar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  z-index: 1000;
+
+  width: 100%;
+
+  transition:
+    background .3s ease,
+    border-color .3s ease,
+    backdrop-filter .3s ease;
+}
+
+.ridex-navbar-scrolled {
+  background:
+    rgba(7, 8, 7, .82);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+  backdrop-filter:
+    blur(20px);
+}
+
+.ridex-nav-inner {
+  width: min(1400px, 92%);
+
+  height: 82px;
+
+  margin: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ridex-brand {
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--rx-white);
+
+  font-size: 26px;
+  font-weight: 900;
+
+  letter-spacing: -1.8px;
+}
+
+.ridex-brand span {
+  color: var(--rx-green);
+}
+
+.ridex-desktop-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 42px;
+
+  margin-left: 90px;
+}
+
+.ridex-desktop-nav a {
+  position: relative;
+
+  color: rgba(244,244,239,.68);
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    color .2s ease;
+}
+
+.ridex-desktop-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  bottom: -7px;
+
+  width: 0;
+  height: 1px;
+
+  background: var(--rx-green);
+
+  transition: width .2s ease;
+}
+
+.ridex-desktop-nav a:hover {
+  color: var(--rx-white);
+}
+
+.ridex-desktop-nav a:hover::after {
+  width: 100%;
+}
+
+.ridex-nav-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 20px;
+}
+
+.ridex-login-btn {
+  padding: 8px 4px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: var(--rx-white);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ridex-nav-cta {
+  min-height: 42px;
+
+  padding: 0 18px;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 1px solid var(--rx-green);
+
+  background: var(--rx-green);
+
+  color: #111;
+
+  font-size: 12px;
+  font-weight: 800;
+
+  transition:
+    transform .2s ease,
+    background .2s ease;
+}
+
+.ridex-nav-cta:hover {
+  transform: translateY(-2px);
+
+  background:
+    #d0ff94;
+}
+
+.ridex-mobile-menu {
+  display: none;
+
+  padding: 8px;
+
+  border: 0;
+
+  background: transparent;
+
+  color: white;
+}
+
+.ridex-mobile-nav {
+  display: none;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.ridex-hero {
+  position: relative;
+
+  min-height: 900px;
+  height: 100vh;
+
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+}
+
+.ridex-hero-image {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+}
+
+.ridex-hero-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  filter:
+    saturate(.75)
+    contrast(1.05);
+}
+
+.ridex-hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(4,6,5,.96) 0%,
+      rgba(4,6,5,.84) 36%,
+      rgba(4,6,5,.25) 70%,
+      rgba(4,6,5,.5) 100%
+    );
+}
+
+.ridex-hero-overlay::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      0deg,
+      var(--rx-black) 0%,
+      transparent 25%
+    );
+}
+
+.ridex-hero-content {
+  position: relative;
+
+  z-index: 3;
+
+  width: min(1400px, 92%);
+
+  margin: auto;
+}
+
+.ridex-eyebrow {
+  margin-bottom: 22px;
+
+  color: var(--rx-green);
+
+  font-size: 10px;
+  font-weight: 900;
+
+  letter-spacing: 3px;
+}
+
+.ridex-eyebrow-light {
+  color: var(--rx-green);
+}
+
+.ridex-hero h1 {
+  max-width: 800px;
+
+  margin: 0;
+
+  font-size:
+    clamp(72px, 9vw, 138px);
+
+  line-height: .86;
+
+  letter-spacing: -7px;
+
+  font-weight: 900;
+}
+
+.ridex-hero h1 span {
+  color: var(--rx-green);
+}
+
+.ridex-hero-content > p {
+  max-width: 500px;
+
+  margin:
+    34px 0 32px;
+
+  color: rgba(244,244,239,.72);
+
+  font-size: 17px;
+
+  line-height: 1.7;
+}
+
+.ridex-hero-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.ridex-primary-btn {
+  min-height: 54px;
+
+  padding: 0 23px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+
+  border: 1px solid var(--rx-green);
+
+  background: var(--rx-green);
+
+  color: #111;
+
+  font-size: 13px;
+  font-weight: 850;
+
+  transition:
+    transform .2s ease,
+    box-shadow .2s ease;
+}
+
+.ridex-primary-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 45px
+    rgba(185,255,102,.18);
+}
+
+.ridex-secondary-btn {
+  min-height: 54px;
+
+  padding: 0 22px;
+
+  border:
+    1px solid rgba(255,255,255,.28);
+
+  background:
+    rgba(255,255,255,.04);
+
+  color: white;
+
+  font-size: 13px;
+  font-weight: 700;
+
+  backdrop-filter:
+    blur(10px);
+
+  transition:
+    background .2s ease,
+    border-color .2s ease;
+}
+
+.ridex-secondary-btn:hover {
+  background:
+    rgba(255,255,255,.1);
+
+  border-color:
+    rgba(255,255,255,.55);
+}
+
+.ridex-hero-trust {
+  margin-top: 52px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.ridex-avatar-stack {
+  display: flex;
+  align-items: center;
+}
+
+.ridex-avatar-stack span {
+  width: 30px;
+  height: 30px;
+
+  margin-left: -6px;
+
+  border:
+    2px solid #111;
+
+  border-radius: 50%;
+
+  display: grid;
+  place-items: center;
+
+  background: #303530;
+
+  color: white;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.ridex-avatar-stack span:first-child {
+  margin-left: 0;
+}
+
+.ridex-avatar-stack span:nth-child(2) {
+  background: #596252;
+}
+
+.ridex-avatar-stack span:nth-child(3) {
+  background: #7b826e;
+}
+
+.ridex-avatar-stack span:last-child {
+  background: var(--rx-green);
+  color: #111;
+}
+
+.ridex-hero-trust strong,
+.ridex-hero-trust small {
+  display: block;
+}
+
+.ridex-hero-trust strong {
+  margin-bottom: 4px;
+
+  font-size: 11px;
+}
+
+.ridex-hero-trust small {
+  color: rgba(255,255,255,.5);
+
+  font-size: 10px;
+}
+
+.ridex-hero-bottom {
+  position: absolute;
+
+  z-index: 4;
+
+  left: 4%;
+
+  bottom: 40px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 18px;
+
+  color: rgba(255,255,255,.4);
+
+  font-size: 9px;
+  font-weight: 700;
+
+  letter-spacing: 2px;
+}
+
+.ridex-scroll-line {
+  position: relative;
+
+  width: 80px;
+  height: 1px;
+
+  background:
+    rgba(255,255,255,.2);
+}
+
+.ridex-scroll-line span {
+  position: absolute;
+
+  left: 0;
+
+  width: 25%;
+  height: 1px;
+
+  background: var(--rx-green);
+
+  animation:
+    ridexScrollLine 2s infinite ease-in-out;
+}
+
+@keyframes ridexScrollLine {
+
+  0% {
+    left: 0;
+  }
+
+  50% {
+    left: 75%;
+  }
+
+  100% {
+    left: 0;
+  }
+
+}
+
+
+/* =========================================================
+   TRUST BAR
+========================================================= */
+
+.ridex-trust-bar {
+  min-height: 110px;
+
+  padding: 25px 6%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  align-items: center;
+
+  border-top:
+    1px solid rgba(255,255,255,.07);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.07);
+
+  background:
+    #090b09;
+}
+
+.ridex-trust-bar div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+
+  color: rgba(244,244,239,.65);
+
+  font-size: 12px;
+}
+
+.ridex-trust-bar svg {
+  color: var(--rx-green);
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.ridex-intro {
+  padding:
+    160px 6% 180px;
+
+  background:
+    var(--rx-black);
+}
+
+.ridex-section-number {
+  margin-bottom: 70px;
+
+  color: #646a64;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 2.5px;
+}
+
+.ridex-intro-grid {
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.2fr .8fr;
+
+  gap: 120px;
+}
+
+.ridex-intro h2 {
+  margin: 0;
+
+  font-size:
+    clamp(60px, 7vw, 110px);
+
+  line-height: .9;
+
+  letter-spacing: -6px;
+
+  font-weight: 900;
+}
+
+.ridex-intro h2 span {
+  color: var(--rx-green);
+}
+
+.ridex-intro-copy {
+  padding-top: 25px;
+}
+
+.ridex-large-copy {
+  margin-top: 0;
+
+  color: var(--rx-soft) !important;
+
+  font-size: 23px !important;
+
+  line-height: 1.5 !important;
+}
+
+.ridex-intro-copy p:not(.ridex-large-copy) {
+  margin-top: 28px;
+
+  color: var(--rx-muted);
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+.ridex-text-btn {
+  margin-top: 25px;
+
+  padding: 0 0 8px;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  border: 0;
+  border-bottom:
+    1px solid var(--rx-green);
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 750;
+}
+
+
+/* =========================================================
+   HOW IT WORKS
+========================================================= */
+
+.ridex-how {
+  padding:
+    150px 6%;
+
+  background:
+    #0b0d0b;
+}
+
+.ridex-section-heading {
+  max-width: 650px;
+
+  margin-bottom: 90px;
+}
+
+.ridex-section-heading h2 {
+  margin: 0 0 25px;
+
+  font-size:
+    clamp(60px, 7vw, 105px);
+
+  line-height: .88;
+
+  letter-spacing: -6px;
+}
+
+.ridex-section-heading h2 span {
+  color: var(--rx-green);
+}
+
+.ridex-section-heading p {
+  max-width: 430px;
+
+  color: var(--rx-muted);
+
+  font-size: 14px;
+
+  line-height: 1.8;
+}
+
+.ridex-steps {
+  max-width: 1300px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  border-top:
+    1px solid rgba(255,255,255,.12);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.12);
+}
+
+.ridex-step {
+  position: relative;
+
+  min-height: 430px;
+
+  padding: 45px;
+
+  border-right:
+    1px solid rgba(255,255,255,.12);
+}
+
+.ridex-step:last-child {
+  border-right: 0;
+}
+
+.ridex-step > span {
+  color: #5d625d;
+
+  font-size: 10px;
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.ridex-step-icon {
+  width: 55px;
+  height: 55px;
+
+  margin:
+    100px 0 30px;
+
+  display: grid;
+  place-items: center;
+
+  border:
+    1px solid rgba(185,255,102,.3);
+
+  color: var(--rx-green);
+}
+
+.ridex-step h3 {
+  margin: 0 0 14px;
+
+  font-size: 22px;
+
+  letter-spacing: -.5px;
+}
+
+.ridex-step p {
+  max-width: 290px;
+
+  color: var(--rx-muted);
+
+  font-size: 13px;
+
+  line-height: 1.8;
+}
+
+.ridex-step-featured {
+  background:
+    rgba(185,255,102,.035);
+}
+
+
+/* =========================================================
+   SAFETY
+========================================================= */
+
+.ridex-safety {
+  min-height: 850px;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  background: #070907;
+}
+
+.ridex-safety-image {
+  min-height: 750px;
+
+  overflow: hidden;
+}
+
+.ridex-safety-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  filter:
+    grayscale(.25)
+    contrast(1.05);
+
+  transition:
+    transform 1s ease;
+}
+
+.ridex-safety:hover .ridex-safety-image img {
+  transform: scale(1.03);
+}
+
+.ridex-safety-content {
+  padding:
+    130px 10%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ridex-safety-content .ridex-section-number {
+  margin-bottom: 60px;
+}
+
+.ridex-safety-content h2 {
+  margin: 0;
+
+  font-size:
+    clamp(55px, 6vw, 92px);
+
+  line-height: .9;
+
+  letter-spacing: -5px;
+}
+
+.ridex-safety-content h2 span {
+  color: var(--rx-green);
+}
+
+.ridex-safety-content > p {
+  max-width: 490px;
+
+  margin:
+    35px 0;
+
+  color: var(--rx-muted);
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+.ridex-safety-list {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+}
+
+.ridex-safety-list div {
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  color: var(--rx-soft);
+
+  font-size: 12px;
+}
+
+.ridex-safety-list svg {
+  width: 18px;
+
+  color: var(--rx-green);
+}
+
+
+/* =========================================================
+   DRIVER
+========================================================= */
+
+.ridex-driver {
+  min-height: 800px;
+
+  padding:
+    130px 7%;
+
+  display: grid;
+
+  grid-template-columns:
+    .9fr 1.1fr;
+
+  gap: 80px;
+
+  align-items: center;
+
+  background:
+    linear-gradient(
+      135deg,
+      #10140f,
+      #080b08
+    );
+}
+
+.ridex-driver-content h2 {
+  margin: 0;
+
+  font-size:
+    clamp(60px, 7vw, 105px);
+
+  line-height: .87;
+
+  letter-spacing: -6px;
+}
+
+.ridex-driver-content h2 span {
+  color: var(--rx-green);
+}
+
+.ridex-driver-content > p {
+  max-width: 450px;
+
+  margin:
+    30px 0;
+
+  color: var(--rx-muted);
+
+  font-size: 14px;
+
+  line-height: 1.9;
+}
+
+.ridex-driver-visual {
+  min-height: 530px;
+
+  display: grid;
+  place-items: center;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(185,255,102,.08),
+      transparent 65%
+    );
+}
+
+.ridex-driver-card {
+  width: min(530px, 90%);
+
+  padding: 30px;
+
+  background:
+    rgba(24,28,24,.92);
+
+  border:
+    1px solid rgba(255,255,255,.1);
+
+  box-shadow:
+    0 40px 100px
+    rgba(0,0,0,.4);
+}
+
+.ridex-driver-card-top {
+  display: flex;
+  justify-content: space-between;
+
+  color: #70766f;
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+.ridex-route {
+  position: relative;
+
+  height: 140px;
+
+  margin: 35px 15px;
+
+  border-left:
+    1px dashed #667061;
+}
+
+.ridex-route-dot {
+  position: absolute;
+
+  left: -6px;
+
+  width: 11px;
+  height: 11px;
+
+  border-radius: 50%;
+
+  background:
+    var(--rx-green);
+}
+
+.ridex-route-dot:first-child {
+  top: 0;
+}
+
+.ridex-route-dot:last-child {
+  bottom: 0;
+}
+
+.ridex-route-line {
+  position: absolute;
+
+  left: -1px;
+  top: 10px;
+  bottom: 10px;
+
+  border-left:
+    1px dashed rgba(185,255,102,.5);
+}
+
+.ridex-route-labels {
+  position: absolute;
+
+  top: 87px;
+  left: 45px;
+  right: 15px;
+
+  display: flex;
+  justify-content: space-between;
+
+  color: var(--rx-white);
+
+  font-size: 13px;
+}
+
+.ridex-driver-card-bottom {
+  padding-top: 25px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+}
+
+.ridex-driver-card-bottom small,
+.ridex-driver-card-bottom strong {
+  display: block;
+}
+
+.ridex-driver-card-bottom small {
+  margin-bottom: 6px;
+
+  color: #6d736c;
+
+  font-size: 9px;
+}
+
+.ridex-driver-card-bottom strong {
+  color: var(--rx-green);
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   STATS
+========================================================= */
+
+.ridex-stats {
+  min-height: 300px;
+
+  padding: 70px 6%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  align-items: center;
+
+  border-top:
+    1px solid rgba(255,255,255,.08);
+
+  border-bottom:
+    1px solid rgba(255,255,255,.08);
+
+  background:
+    var(--rx-black);
+}
+
+.ridex-stat {
+  padding: 20px;
+
+  text-align: center;
+
+  border-right:
+    1px solid rgba(255,255,255,.08);
+}
+
+.ridex-stat:last-child {
+  border-right: 0;
+}
+
+.ridex-stat strong {
+  display: block;
+
+  font-size:
+    clamp(45px, 5vw, 70px);
+
+  line-height: 1;
+
+  letter-spacing: -4px;
+}
+
+.ridex-stat strong span {
+  color: var(--rx-green);
+}
+
+.ridex-stat p {
+  margin: 15px 0 0;
+
+  color: #6d736d;
+
+  font-size: 10px;
+
+  text-transform: uppercase;
+
+  letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   TESTIMONIAL
+========================================================= */
+
+.ridex-testimonials {
+  padding:
+    160px 6%;
+
+  background:
+    #0b0d0b;
+}
+
+.ridex-testimonial-main {
+  max-width: 1000px;
+
+  margin:
+    0 auto;
+
+  text-align: center;
+}
+
+.ridex-stars {
+  display: flex;
+  justify-content: center;
+
+  gap: 5px;
+
+  color: var(--rx-green);
+}
+
+.ridex-testimonial-main blockquote {
+  margin:
+    35px 0;
+
+  font-size:
+    clamp(30px, 4vw, 52px);
+
+  line-height: 1.2;
+
+  letter-spacing: -2px;
+
+  font-weight: 600;
+}
+
+.ridex-testimonial-person {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 12px;
+}
+
+.ridex-person-avatar {
+  width: 38px;
+  height: 38px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    var(--rx-green);
+
+  color: #111;
+
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.ridex-testimonial-person strong,
+.ridex-testimonial-person span {
+  display: block;
+
+  text-align: left;
+}
+
+.ridex-testimonial-person strong {
+  font-size: 11px;
+}
+
+.ridex-testimonial-person span {
+  margin-top: 3px;
+
+  color: #70766f;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.ridex-final {
+  position: relative;
+
+  min-height: 720px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  text-align: center;
+}
+
+.ridex-final-bg {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      rgba(5,7,5,.78),
+      rgba(5,7,5,.9)
+    ),
+    url("https://images.unsplash.com/photo-1523475496153-3d6cc450f30d?auto=format&fit=crop&w=2200&q=90")
+    center / cover;
+
+  filter:
+    saturate(.6);
+}
+
+.ridex-final-content {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(900px, 90%);
+}
+
+.ridex-final-content h2 {
+  margin: 0;
+
+  font-size:
+    clamp(65px, 9vw, 130px);
+
+  line-height: .85;
+
+  letter-spacing: -7px;
+}
+
+.ridex-final-content h2 span {
+  color: var(--rx-green);
+}
+
+.ridex-final-content p {
+  margin:
+    30px auto;
+
+  color: rgba(244,244,239,.65);
+
+  font-size: 15px;
+}
+
+.ridex-final-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 25px;
+}
+
+.ridex-final-link {
+  padding: 10px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  border: 0;
+  border-bottom:
+    1px solid var(--rx-green);
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 12px;
+  font-weight: 700;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.ridex-footer {
+  padding:
+    80px 6% 30px;
+
+  display: grid;
+
+  grid-template-columns:
+    2fr repeat(3, 1fr);
+
+  gap: 50px;
+
+  background: #050605;
+}
+
+.ridex-footer-logo {
+  font-size: 28px;
+}
+
+.ridex-footer-brand p {
+  margin-top: 22px;
+
+  color: #666c65;
+
+  font-size: 12px;
+
+  line-height: 1.8;
+}
+
+.ridex-footer-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 15px;
+}
+
+.ridex-footer-column strong {
+  margin-bottom: 10px;
+
+  color: #727870;
+
+  font-size: 9px;
+
+  letter-spacing: 2px;
+}
+
+.ridex-footer-column a,
+.ridex-footer-column button {
+  width: fit-content;
+
+  padding: 0;
+
+  border: 0;
+
+  background: transparent;
+
+  color: #a4aaa3;
+
+  font-size: 11px;
+
+  transition:
+    color .2s ease;
+}
+
+.ridex-footer-column a:hover,
+.ridex-footer-column button:hover {
+  color: var(--rx-green);
+}
+
+.ridex-footer-bottom {
+  grid-column: 1 / -1;
+
+  padding-top: 25px;
+
+  display: flex;
+  justify-content: space-between;
+
+  border-top:
+    1px solid rgba(255,255,255,.07);
+
+  color: #4f554e;
+
+  font-size: 9px;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .ridex-desktop-nav {
+    display: none;
+  }
+
+  .ridex-mobile-menu {
+    display: block;
+  }
+
+  .ridex-mobile-nav {
+    position: absolute;
+
+    top: 82px;
+    left: 4%;
+    right: 4%;
+
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 4px;
+
+    background:
+      rgba(13,15,13,.97);
+
+    border:
+      1px solid rgba(255,255,255,.08);
+
+    box-shadow:
+      0 30px 80px rgba(0,0,0,.4);
+  }
+
+  .ridex-mobile-nav a,
+  .ridex-mobile-nav button {
+    padding: 15px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: white;
+
+    text-align: left;
+
+    font-size: 13px;
+  }
+
+  .ridex-mobile-cta {
+    background: var(--rx-green) !important;
+
+    color: #111 !important;
+
+    font-weight: 800;
+  }
+
+  .ridex-trust-bar {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 25px;
+  }
+
+  .ridex-intro-grid {
+    grid-template-columns: 1fr;
+
+    gap: 60px;
+  }
+
+  .ridex-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .ridex-step {
+    border-right: 0;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.12);
+  }
+
+  .ridex-step:last-child {
+    border-bottom: 0;
+  }
+
+  .ridex-safety {
+    grid-template-columns: 1fr;
+  }
+
+  .ridex-safety-image {
+    min-height: 550px;
+  }
+
+  .ridex-driver {
+    grid-template-columns: 1fr;
+  }
+
+  .ridex-stats {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+  .ridex-stat:nth-child(2) {
+    border-right: 0;
+  }
+
+  .ridex-footer {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .ridex-nav-inner {
+    height: 70px;
+  }
+
+  .ridex-login-btn {
+    display: none;
+  }
+
+  .ridex-nav-cta {
+    min-height: 38px;
+
+    padding: 0 14px;
+
+    font-size: 10px;
+  }
+
+  .ridex-hero {
+    min-height: 780px;
+  }
+
+  .ridex-hero-image img {
+    object-position:
+      64% center;
+  }
+
+  .ridex-hero-overlay {
+    background:
+      linear-gradient(
+        180deg,
+        rgba(4,6,5,.55),
+        rgba(4,6,5,.9) 65%,
+        #070807
+      );
+  }
+
+  .ridex-hero-content {
+    align-self: flex-end;
+
+    padding-bottom: 130px;
+  }
+
+  .ridex-hero h1 {
+    font-size: 62px;
+
+    letter-spacing: -4px;
+  }
+
+  .ridex-hero-content > p {
+    max-width: 330px;
+
+    font-size: 14px;
+  }
+
+  .ridex-hero-actions {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    max-width: 300px;
+  }
+
+  .ridex-hero-actions button {
+    width: 100%;
+  }
+
+  .ridex-hero-trust {
+    margin-top: 30px;
+  }
+
+  .ridex-trust-bar {
+    grid-template-columns: 1fr;
+
+    padding: 35px 20px;
+  }
+
+  .ridex-trust-bar div {
+    justify-content: flex-start;
+  }
+
+  .ridex-intro,
+  .ridex-how,
+  .ridex-testimonials {
+    padding:
+      100px 7%;
+  }
+
+  .ridex-section-number {
+    margin-bottom: 45px;
+  }
+
+  .ridex-intro h2,
+  .ridex-section-heading h2 {
+    font-size: 55px;
+
+    letter-spacing: -4px;
+  }
+
+  .ridex-large-copy {
+    font-size: 19px !important;
+  }
+
+  .ridex-step {
+    min-height: 350px;
+
+    padding: 35px 25px;
+  }
+
+  .ridex-step-icon {
+    margin-top: 70px;
+  }
+
+  .ridex-safety-content {
+    padding:
+      90px 7%;
+  }
+
+  .ridex-safety-content h2,
+  .ridex-driver-content h2 {
+    font-size: 55px;
+
+    letter-spacing: -4px;
+  }
+
+  .ridex-safety-image {
+    min-height: 400px;
+  }
+
+  .ridex-driver {
+    padding:
+      90px 7%;
+  }
+
+  .ridex-driver-visual {
+    min-height: 430px;
+  }
+
+  .ridex-driver-card {
+    padding: 22px;
+  }
+
+  .ridex-stats {
+    grid-template-columns: 1fr;
+
+    padding: 50px 7%;
+  }
+
+  .ridex-stat {
+    border-right: 0;
+
+    border-bottom:
+      1px solid rgba(255,255,255,.08);
+  }
+
+  .ridex-stat:last-child {
+    border-bottom: 0;
+  }
+
+  .ridex-testimonial-main blockquote {
+    font-size: 28px;
+
+    letter-spacing: -1px;
+  }
+
+  .ridex-final {
+    min-height: 620px;
+  }
+
+  .ridex-final-content h2 {
+    font-size: 65px;
+
+    letter-spacing: -5px;
+  }
+
+  .ridex-final-actions {
+    flex-direction: column;
+  }
+
+  .ridex-footer {
+    grid-template-columns: 1fr;
+
+    padding:
+      60px 7% 25px;
+  }
+
+  .ridex-footer-bottom {
+    grid-column: auto;
+
+    flex-direction: column;
+
+    gap: 10px;
+  }
+}
+.ridex-route-university {
+  color: white;
+}
